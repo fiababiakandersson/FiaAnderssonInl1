@@ -4,8 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import se.yrgo.domain.Author;
-import se.yrgo.domain.Book;
+import se.yrgo.domain.GameCharacter;
+import se.yrgo.domain.PowerUp;
 
 import java.util.Set;
 
@@ -19,11 +19,11 @@ public class HarnessTest {
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
 
-        Book book1= new Book( "123","My book 1" );
-        Book book2= new Book("234","My book 2");
-        Book book3= new Book( "345", "My book 3");
+        PowerUp book1= new PowerUp( "123","My book 1" );
+        PowerUp book2= new PowerUp("234","My book 2");
+        PowerUp book3= new PowerUp( "345", "My book 3");
 
-        Author author = new Author("Arthur Bengt");
+        GameCharacter author = new GameCharacter("Arthur Bengt");
 
 
         author.addBookToBookCollection(book1);
@@ -35,10 +35,10 @@ public class HarnessTest {
         //session.save(author);
 
         //Retrieve the author from the database
-        Author author_from_database = session.get(Author.class, 44);
+        GameCharacter author_from_database = session.get(GameCharacter.class, 44);
         System.out.println (author_from_database);
-        Set<Book> books = author_from_database.getBookCollection();
-        for (Book b :books) {
+        Set<PowerUp> books = author_from_database.getBookCollection();
+        for (PowerUp b :books) {
             System.out.println (b);
         }
 
