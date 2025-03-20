@@ -4,6 +4,8 @@ import java.util.*;
 
 import jakarta.persistence.*;
 
+//TODO: REMOVE! WAS TUTOR! 
+
 @Entity
 public class GameCharacter {
     @Id
@@ -12,15 +14,15 @@ public class GameCharacter {
     private String name;
 
     @OneToMany
-    @JoinColumn(name = "AUTHOR_FK")
-    private Set<PowerUp> powerUpCollection;
+    @JoinColumn(name = "POWERUP_FK")
+    private List<PowerUp> powerUpCollection;
 
     public GameCharacter() {
     }
 
     public GameCharacter(String name) {
         this.name = name;
-        this.powerUpCollection = new HashSet<PowerUp>();
+        this.powerUpCollection = new ArrayList<PowerUp>();
     }
 
     public int getId() {
@@ -31,12 +33,12 @@ public class GameCharacter {
         return name;
     }
 
-    public void addPowerUpToPowerUpCollection(PowerUp newPowerUp) {
+    public void addPowerUpToCharacterGroup(PowerUp newPowerUp) {
         this.powerUpCollection.add(newPowerUp);
     }
 
-    public Set<PowerUp> getPowerUpCollection() {
-        Set<PowerUp> unmodifiable = Collections.unmodifiableSet(this.powerUpCollection);
+    public List<PowerUp> getPowerUpCollection() {
+        List<PowerUp> unmodifiable = Collections.unmodifiableList(this.powerUpCollection);
         return unmodifiable;
     }
 

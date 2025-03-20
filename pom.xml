@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>se.yrgo</groupId>
-    <artifactId>hibernateExercise</artifactId>
+    <artifactId>hibernate</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -123,14 +123,14 @@
 
 
         <build>
-            <sourceDirectory>src/main/java</sourceDirectory>
+            <!-- <sourceDirectory>src/main/java</sourceDirectory> -->
             <resources>
-                <resource>
+                <!-- <resource>
                     <directory>src/main/java</directory>
                     <includes>
                         <include>**/*.xml</include>
                     </includes>
-                </resource>
+                </resource> -->
 
                 <resource>
                     <directory>src/main/resources</directory>
