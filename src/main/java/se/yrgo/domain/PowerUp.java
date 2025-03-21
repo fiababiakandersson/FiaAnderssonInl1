@@ -3,18 +3,13 @@ package se.yrgo.domain;
 import jakarta.persistence.*;
 
 @Entity
-// @Table(name="TBL_BOOK" )
 public class PowerUp {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    // @Column(name="ISBN_NUM")
     private String powerUpName;
     private int xp;
-
-    // @ManyToOne
-    // private Author author;
 
     public PowerUp() {
     }

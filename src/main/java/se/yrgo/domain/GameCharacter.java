@@ -4,8 +4,6 @@ import java.util.*;
 
 import jakarta.persistence.*;
 
-//TODO: REMOVE! WAS TUTOR! 
-
 @Entity
 public class GameCharacter {
     @Id
